@@ -20,15 +20,18 @@ class OCR:
     def inicial(self):
         #conteudo inicial da pagina
         st.title("Sistema integrado JMP")
-        st.write("Optical Character Recognition (OCR) implementado com Python")
-        imagem = st.file_uploader("Selecione alguma imagem", type=["png","jpg"])
+        option = st.selectbox('Proveedor', ('Chino 1', 'Chino 2', 'Chino 3', 'Otro'))
+        st.write('Proveedor:', option)
+        num_prod = st.number_input('Número de productos')
+        st.write("Escaneo de etiqueta")
+        imagem = st.file_uploader("escanear etiqueta", type=["png","jpg"])
         #se selecionar alguma imagem...
         if imagem:
             img = Image.open(imagem)
             st.image(img, width=350)
             st.info("Texto extraído")
             self.texto = self.extrair_texto(img)
-            #st.write(f"{self.texto}")
+            st.write(f"{self.texto}")
             if "SKU" in self.texto:
               sku = self.texto.split("SKU")[1].split("\n")[0]
               sku = [int(x) for x in sku.split() if x.isdigit()][0]
@@ -38,6 +41,11 @@ class OCR:
               rfc = self.texto.split("RFC")[1].split("\n")[0]
               rfc = rfc.replace('#', '').replace(' ','').replace(':','')
               st.write(f"RFC del vendedor registrado: {rfc}")
+            
+            if st.button('Enviar'):
+                 st.write('Enviado')
+             else:
+                 st.write('Goodbye')
             
             #Opcao de analisar texto
             #self.analisar_texto = st.sidebar.checkbox("Analisar texto")

@@ -28,16 +28,16 @@ class OCR:
             st.image(img, width=350)
             st.info("Texto extraído")
             self.texto = self.extrair_texto(img)
-            st.write(f"{self.texto}")
+            #st.write(f"{self.texto}")
             if "SKU" in self.texto:
               sku = self.texto.split("SKU")[1].split("\n")[0]
               sku = [int(x) for x in sku.split() if x.isdigit()][0]
-              st.write(f"{sku}")
+              st.write(f"SKU del producto registrado: {sku}")
 
             if "RFC" in self.texto:
               rfc = self.texto.split("RFC")[1].split("\n")[0]
               rfc = rfc.replace('#', '').replace(' ','').replace(':','')
-              st.write(f"{rfc}")
+              st.write(f"RFC del vendedor registrado: {rfc}")
             
             #Opcao de analisar texto
             self.analisar_texto = st.sidebar.checkbox("Analisar texto")

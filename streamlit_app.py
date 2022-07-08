@@ -12,14 +12,14 @@ class OCR:
 
     def __init__(self):
         #altera titulo da pagina
-        st.set_page_config(page_title="Sistema integrado JMP")
+        #st.set_page_config(page_title="Sistema integrado JMP")
         #inicializa variveis
         self.texto = ""
         self.analisar_texto = False
 
     def inicial(self):
         #conteudo inicial da pagina
-        st.title("OCR Programa")
+        st.title("Sistema integrado JMP")
         st.write("Optical Character Recognition (OCR) implementado com Python")
         imagem = st.file_uploader("Selecione alguma imagem", type=["png","jpg"])
         #se selecionar alguma imagem...

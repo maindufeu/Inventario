@@ -43,9 +43,9 @@ class OCR:
               st.write(f"RFC del vendedor registrado: {rfc}")
             
             if st.button('Enviar'):
-                 st.write('Enviado')
-             else:
-                 st.write('Goodbye')
+                st.write('Enviado')
+            else:
+                st.write('Goodbye')
             
             #Opcao de analisar texto
             #self.analisar_texto = st.sidebar.checkbox("Analisar texto")

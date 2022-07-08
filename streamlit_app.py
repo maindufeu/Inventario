@@ -1,12 +1,3 @@
-import streamlit as st
-import pandas as pd
-import numpy as np
-
-st.title('Sistema integrado JMP')
-
-
-st.title('Inventario JMP')
-
 #import principal
 import streamlit as st
 #imports relacionados
@@ -14,12 +5,14 @@ from PIL import Image
 import pytesseract
 #metodos internos
 import functions.functions as fc
+import pandas as pd
+import numpy as np
 
 class OCR:
 
     def __init__(self):
         #altera titulo da pagina
-        st.set_page_config(page_title="Python OCR")
+        st.set_page_config(page_title="Sistema integrado JMP")
         #inicializa variveis
         self.texto = ""
         self.analisar_texto = False
@@ -82,6 +75,3 @@ class OCR:
 
 ocr = OCR()
 ocr.inicial()
-
-
-st.title('Venta JMP')

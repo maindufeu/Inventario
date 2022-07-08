@@ -22,7 +22,7 @@ class OCR:
         st.title("Sistema integrado JMP")
         option = st.selectbox('Proveedor', ('Chino 1', 'Chino 2', 'Chino 3', 'Otro'))
         st.write('Proveedor:', option)
-        num_prod = st.number_input('Número de productos')
+        num_prod = st.number_input('Número de productos', value= 'int')
         st.write("Escaneo de etiqueta")
         imagem = st.file_uploader("escanear etiqueta", type=["png","jpg"])
         #se selecionar alguma imagem...
@@ -45,7 +45,7 @@ class OCR:
             if st.button('Enviar'):
                 st.write('Enviado')
             else:
-                st.write('Goodbye')
+                st.write('Revisa la entrada antes de enviar')
             
             #Opcao de analisar texto
             #self.analisar_texto = st.sidebar.checkbox("Analisar texto")

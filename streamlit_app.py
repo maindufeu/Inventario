@@ -22,7 +22,7 @@ class OCR:
         st.title("Sistema integrado JMP")
         option = st.selectbox('Proveedor', ('Chino 1', 'Chino 2', 'Chino 3', 'Otro'))
         st.write('Proveedor:', option)
-        num_prod = st.number_input('Número de productos', min_value='1', max_value='1000000', value='int')
+        num_prod = st.number_input('Número de productos', min_value=1, max_value=1000000, value=1, step=1)
         st.write("Escaneo de etiqueta")
         imagem = st.file_uploader("escanear etiqueta", type=["png","jpg"])
         #se selecionar alguma imagem...

@@ -48,7 +48,7 @@ class OCR:
             #self.analisar_texto = st.sidebar.checkbox("Analizar texto")
             #if self.analisar_texto==True:
             #    self.mostrar_analise()
-        
+        '''
         picture = st.camera_input("Take a picture")
         if picture:
             st.image(picture, width=350)
@@ -69,7 +69,7 @@ class OCR:
                 st.write('Enviado')
             else:
                 st.write('Revisa la entrada antes de enviar')
-                
+           '''     
     def extrair_texto(self, img):
         #O comando que extrai o texto da imagem
         texto = pytesseract.image_to_string(img)
